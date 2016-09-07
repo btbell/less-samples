@@ -50,15 +50,25 @@ article {
 	width: 25%;
 	}
 
+.border-radius(@radius: 5px) {
+	-mox-border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-ms-border-radius: @radius;
+	border-radius: @radius;
+}
+
+/* border radius value (10px) will overwrite the oringinal value set above in the parameterized mixin)*/
 .commonColumnTraits {
 	background-color: @col-bg-color;
+	.border-radius(10px);
 	border: @accent-border;
 	padding: 0 1%;
 }
 
+// nested rules
 footer {
 	p {
-		font: normal 100% Arial, Helvetica, sans-serif;
+		font: normal 85% Arial, Helvetica, sans-serif;
 	}
 	a {
 		color: #fff;
@@ -72,6 +82,39 @@ footer {
 	margin: 2% auto;
 	padding: 0 1%;
 }
+
+// messages
+.alert(confirm) {
+	@color: #00ff00;
+	color: @color;
+}
+
+.alert(error) {
+	@color: #f00;
+	color: @color
+}
+
+.alert(@_) {
+	display: block;
+	visibility: visible;
+	text-decoration: underline;
+}
+
+.alert(@_,@_) {
+	display: block;
+	visibility: visible;
+	text-decoration: underline;
+}
+
+.message {
+	visibility: hidden;	
+}
+
+// tie in with logic
+/*@type: error;
+.message {
+	.alert(@type);
+}*/
 
 
 /* ==== MEDIA QUERIES ==== */
