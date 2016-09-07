@@ -14,44 +14,67 @@ html {
 	background-color: @main-bg-color;
 }
 
-body {
+#wrapper {
+	
+}
+
+#body {
 	width: 90%;
 	margin: 2% auto;
-	font: 90% Verdana, Geneva, sans-serif;
-	}
+}
 
 article {
 	background-color: @page-bg-color;
-	width: 90%;
+	width: 96%;
 	padding: 2%;
 	overflow: hidden;
 }
 	
 .col1 {
-	background-color: @col-bg-color;
+	.commonColumnTraits;
 	float: left;
 	width: 35%;
 	margin-right: 2%;
-	padding: 0 1%;
-	border: @accent-border;
 	}
 	
 .col2 {
-	background-color: @col-bg-color;
+	.commonColumnTraits;
 	float: left;
 	width: 28.7%;
 	margin-right: 2%;
-	padding: 0 1%;
-	border: @accent-border;
 	}
 
 .col3 {
-	background-color: @col-bg-color;
+	.commonColumnTraits;
 	float: right;
 	width: 25%;
-	padding: 0 1%;
-	border: @accent-border;
 	}
+
+.commonColumnTraits {
+	background-color: @col-bg-color;
+	border: @accent-border;
+	padding: 0 1%;
+}
+
+footer {
+	p {
+		font: normal 100% Arial, Helvetica, sans-serif;
+	}
+	a {
+		color: #fff;
+		text-decoration: none;
+		&:hover {
+		color: #fff;
+		text-decoration: underline;
+		}
+	}
+	width: 70%
+	margin: 2% auto;
+	padding: 0 1%;
+}
+
+
+/* ==== MEDIA QUERIES ==== */
 
 @media screen and (min-width: 571px) and (max-width: 850px) {
 .col1 {
